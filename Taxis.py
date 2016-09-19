@@ -8,6 +8,6 @@ def main():
     taxi1.drive(40)
     taxi1.start_fare()
     taxi1.drive(100)
-    print(taxi1.__str__())
+    print(taxi1)
 
 main()

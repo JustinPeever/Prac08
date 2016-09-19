@@ -78,4 +78,16 @@ class UnreliableCar(Car):
             self.odometer += distance_driven
             return distance_driven
 
+class SilverServiceTaxi(Taxi):
+    def __init__(self, name, fuel, price_per_km, fanciness, flagfall):
+        """ initialise a Taxi instance, based on parent class Car """
+        super().__init__(name, fuel)
+        SilverServiceTaxi.flagfall = flagfall
+        self.fanciness = fanciness
+        Taxi.price_per_km = price_per_km
+        self.current_fare_distance = 0
+
+    def get_fare(self):
+        """ get the price for the taxi trip """
+        return (self.price_per_km * self.current_fare_distance * self.fanciness) +SilverServiceTaxi.flagfall
 
